@@ -39,7 +39,7 @@ add in app.js :
 var db = require('./db.js');
 
 var angularBridge = new (require('angular-bridge'))(app, {
-    urlPath : '/api/'
+    urlPrefix : '/api/'
 });
 
 angularBridge.addRessource('pizzas', db.Pizza);
@@ -53,8 +53,7 @@ That's all for the backend, now in Angular :
 
 ```
 var HomeCtrl = function($scope, $routeParams, $location, $resource) {
-    var PizzaDb = $resource('/api/pizzas/:id', 
-			       { id: '@_id' }); 
+    var PizzaDb = $resource('/api/pizzas/:id', { id: '@_id' }); 
    
    // Magic, you are ready now !
    
