@@ -24,6 +24,9 @@ var PizzaSchema = new Schema({
     },
     size : {
         type : Number
+    },  
+    password : {   // You can hide it from read and write ! (check after)
+        type : String 
     }
 });
 
@@ -40,6 +43,10 @@ var angularBridge = new (require('angular-bridge'))(app, {
 });
 
 angularBridge.addRessource('pizzas', db.Pizza);
+//
+// You can also hide fields 
+// angularBridge.addRessource('pizzas', db.Pizza, { hide : ['_id', 'password']});
+//
 ```
 
 That's all for the backend, now in Angular :

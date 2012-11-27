@@ -1,7 +1,10 @@
 {
   "name": "angular-bridge",
-  "description": "Mongoose Express Angular ressources bridge",
-  "version": "1.0.0",
+  "author": {
+    "name": "as"
+  },
+  "description": "Mongoose Express Angular resources bridge",
+  "version": "0.1.1",
   "main": "./index.js",
   "private": false,
   "dependencies": {
@@ -9,8 +12,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/"
+    "url": "git://github.com/Alexandre-Strzelewicz/angular-bridge.git"
   },
-  "homepage": "",
-  "readmeFilename": "Readme.md"
+  "homepage": "https://github.com/Alexandre-Strzelewicz/angular-bridge",
+  "readmeFilename": "README.md",
+  "_npmUser": {
+    "name": "tknew",
+    "email": "strzelewicz.alexandre@gmail.com"
+  },
+  "_id": "angular-bridge@0.1.1",
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "_engineSupported": true,
+  "_npmVersion": "1.1.24",
+  "_nodeVersion": "v0.6.19",
+  "_defaultsLoaded": true,
+  "_from": "angular-bridge@*"
 }
