@@ -74,7 +74,7 @@ angularBridge.addResource('jaboodies', db.Jaboody, { readOnly: ['_id', 'cantChan
 //        the HTTP-verb callback (in this example, 'req' will give an error if it
 //        is not passed as a string)
 //        === BE CAREFUL, THIS USES eval() WHEN YOU PASS A STRING!!!=== 
-angularBridge.addResource('projects', db.Project, { query: '{_user: req.user._id}'});
+angularBridge.addResource('projects', db.Project, { query: '{_user: String(req.user._id)}'});
 ```
 
 That's all for the backend, now in Angular :
