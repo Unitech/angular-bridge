@@ -69,13 +69,17 @@ angularBridge.addResource('toppings', db.Toppings, { hide : ['_id', 'password']}
 angularBridge.addResource('jaboodies', db.Jaboody, { readOnly: ['_id', 'cantChangeMe']});
 
 // You can force a mongoose query... (to restrict access to certain items only)
+angularBridge.addResource('projects', db.Project, { query: '{_user: String(req.user._id)}'});
 // Note:  This can be passed as an object, but you can also pass it as a string
 //        in cases where the object you're looking for is only accessible within
 //        the HTTP-verb callback (in this example, 'req' will give an error if it
 //        is not passed as a string)
-//        === BE CAREFUL, THIS USES eval() WHEN YOU PASS A STRING!!!=== 
-angularBridge.addResource('projects', db.Project, { query: '{_user: String(req.user._id)}'});
+
+// You can force a particular value regardless of what the client sends...
+angularBridge.addResource('clients', db.Client, { force: {_user: 'req.user._id' }});
 ```
+### BE CAREFUL!  `force` AND `query` BOTH USE `eval()`
+
 
 That's all for the backend, now in Angular :
 
