@@ -4,7 +4,7 @@
 	"name": "Alexandre Strzelewicz"
     },
     "description": "Mongoose Express Angular resources bridge",
-    "version": "0.2.2",
+    "version": "0.3.2",
     "main": "./index.js",
     "private": false,
     "dependencies": {
@@ -17,7 +17,7 @@
     "devDependencies": {
 	"mocha": "*",
 	"should": "*"
-    }
+    },
     "homepage": "https://github.com/Alexandre-Strzelewicz/angular-bridge",
     "readmeFilename": "README.md",
     "_npmUser": {
