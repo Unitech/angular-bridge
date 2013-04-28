@@ -32,20 +32,26 @@ var PizzaSchema = new Schema({
 
 // You can optionally add a method to schema.methods that is executed based
 // on the type of HTTP request with the names "query", "get", "put", "post", and "delete"
-PizzaSchema.methods.query = function() {
-  console.log("Queried.");
+// The callback receives the affected entities as it's parameter.
+PizzaSchema.methods.query = function(entities) {
+  console.log("Queried:");
+  console.log(entities);
 };
-PizzaSchema.methods.get = function() {
-  console.log("Got.")
+PizzaSchema.methods.get = function(entity) {
+  console.log("Got:")
+  console.log(entity);
 }
-PizzaSchema.methods.put = function() {
-  console.log("Put.")
+PizzaSchema.methods.put = function(entity) {
+  console.log("Put:")
+  console.log(entity);
 }
-PizzaSchema.methods.post = function() {
-  console.log("Posted.")
+PizzaSchema.methods.post = function(entity) {
+  console.log("Posted:")
+  console.log(entity);
 }
-PizzaSchema.methods.delete = function() {
-  console.log("Deleted.")
+PizzaSchema.methods.delete = function(entity) {
+  console.log("Deleted:")
+  console.log(entity);
 }
 
 exports.Pizza = mongoose.model('pizzas', PizzaSchema);
