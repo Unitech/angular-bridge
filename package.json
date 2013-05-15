@@ -1,31 +1,49 @@
 {
-  "name": "angular-bridge",
-  "author": {
-    "name": "Alexandre Strzelewicz"
-  },
-  "description": "Mongoose Express Angular resources bridge",
-  "version": "0.3.3",
-  "main": "./index.js",
-  "private": false,
-  "dependencies": {
-    "underscore": "1.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Alexandre-Strzelewicz/angular-bridge.git"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "should": "~1.2.2",
-    "supertest": "~0.6.0"
-  },
-  "homepage": "https://github.com/Alexandre-Strzelewicz/angular-bridge",
-  "readmeFilename": "README.md",
-  "_npmUser": {
-    "name": "tknew",
-    "email": "strzelewicz.alexandre@gmail.com"
-  },
-  "engines": {
-    "node": "*"
-  }
+    "name": "angular-bridge",
+    "author": {
+	"name": "Alexandre Strzelewicz",
+	"email" : "strzelewicz.alexandre@gmail.com",
+	"url" : "http://apps.hemca.com"
+    },
+    "description": "Mongoose Express Angular resources bridge",
+    "version": "0.3.4",
+    "main": "./index.js",
+    "private": false,
+    "dependencies": {
+	"underscore": "1.x",
+	"mongoose" : "*",
+	"express" : "*"
+    },
+    "scripts" : {
+	"test" : "NODE_ENV=test ./node_modules/mocha/bin/mocha test"
+    },
+    "keywords": [
+	"angular js",
+	"mongodb",
+	"mongo",
+	"REST",
+	"angularjs",
+	"angular-bridge",
+	"link model",
+	"mongoose"
+    ],
+    "repository": {
+	"type": "git",
+	"url": "git://github.com/Alexandre-Strzelewicz/angular-bridge.git"
+    },
+    "devDependencies": {
+	"mocha": "*",
+	"should": "~1.2.2",
+	"supertest": "~0.6.0",
+	"request" : "*"
+    },
+    "homepage": "https://github.com/Alexandre-Strzelewicz/angular-bridge",
+    "readmeFilename": "README.md",
+    "_npmUser": {
+	"name": "tknew",
+	"email": "strzelewicz.alexandre@gmail.com"
+    },
+    "engines": {
+	"node": "*"
+    }
 }
