@@ -6,7 +6,7 @@
 	"url" : "http://apps.hemca.com"
     },
     "description": "Mongoose Express Angular resources bridge",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "main": "./index.js",
     "private": false,
     "dependencies": {
@@ -29,7 +29,7 @@
     ],
     "repository": {
 	"type": "git",
-	"url": "git://github.com/Alexandre-Strzelewicz/angular-bridge.git"
+	"url": "git://github.com/unitech/angular-bridge.git"
     },
     "devDependencies": {
 	"mocha": "*",
@@ -37,7 +37,7 @@
 	"supertest": "~0.6.0",
 	"request" : "*"
     },
-    "homepage": "https://github.com/Alexandre-Strzelewicz/angular-bridge",
+    "homepage": "https://github.com/unitech/angular-bridge",
     "readmeFilename": "README.md",
     "_npmUser": {
 	"name": "tknew",
