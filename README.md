@@ -1,32 +1,39 @@
 # Angular Bridge
 
-It's a bridge for resources (REST schema) between front-end and back-end when you are using :
+Create, read, update, delete MongoDB collections via AngularJS.
 
-- Mongoose for the models
+It uses : 
+
+- Mongoose for accessing to Mongodb
 - Express for the routing
-- AngularJS as the front-end framework
+- AngularJS (with the [$resource](http://docs.angularjs.org/api/ngResource.$resource) method)
+
+Btw don't forget to include [angular-resource.js](http://code.angularjs.org/1.1.5/angular-resource.js)
 
 ## Sample code
 
-db.js 
+### Backend code
+
+In you db.js backend : 
 
 ```javascript
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/brabra');
-var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
+var db = mongoose.connect('mongodb://localhost/pizza');
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
 
 var PizzaSchema = new Schema({
     author : {
-	type : String,
+	    type : String,
     },
     color : {
-	type : String
+	    type : String
     },
     size : {
-        type : Number
+            type : Number
     },  
-    password : {   // You can hide it from read and write ! (check after)
-        type : String 
+    password : {   // You can hide it from read and write ! (cf after)
+            type : String 
     }
 });
 
@@ -37,56 +44,66 @@ PizzaSchema.methods.query = function(entities) {
   console.log("Queried:");
   console.log(entities);
 };
+
 PizzaSchema.methods.get = function(entity) {
   console.log("Got:")
   console.log(entity);
-}
+};
+
 PizzaSchema.methods.put = function(entity) {
   console.log("Put:")
   console.log(entity);
-}
+};
+
 PizzaSchema.methods.post = function(entity) {
   console.log("Posted:")
   console.log(entity);
-}
+};
+
 PizzaSchema.methods.delete = function(entity) {
   console.log("Deleted:")
   console.log(entity);
-}
+};
 
 exports.Pizza = mongoose.model('pizzas', PizzaSchema);
 ```
 
-add in app.js :
+In your backend app.js :
 
 ```javascript
 var db = require('./db.js');
 
+// Mount all the resource on /api prefix
 var angularBridge = new (require('angular-bridge'))(app, {
     urlPrefix : '/api/'
 });
 
+// With express you can password protect a url prefix :
+app.use('/api', express.basicAuth('admin', 'my_password'));
+
+// Expose the pizzas collection via REST
 angularBridge.addResource('pizzas', db.Pizza);
 
-// You can hide fields...
+// Hiding fields
 angularBridge.addResource('toppings', db.Toppings, { hide : ['_id', 'password']});
 
-// You can specify read-only fields... (sent to client, but will not write to database)
+// Read-only fields (sent to client, but will not write to database)
 angularBridge.addResource('jaboodies', db.Jaboody, { readOnly: ['_id', 'cantChangeMe']});
 
-// You can force a mongoose query... (to restrict access to certain items only)
+// Force a mongoose query (to restrict access to certain items only)
 angularBridge.addResource('projects', db.Project, { query: '{_user: String(req.user._id)}'});
 // Note:  This can be passed as an object, but you can also pass it as a string
 //        in cases where the object you're looking for is only accessible within
 //        the HTTP-verb callback (in this example, 'req' will give an error if it
 //        is not passed as a string)
 
-// You can force a particular value regardless of what the client sends...
+// Force a particular value regardless of what the client sends
 angularBridge.addResource('clients', db.Client, { force: {_user: 'req.user._id' }});
 ```
-### BE CAREFUL!  `force` AND `query` BOTH USE `eval()`
 
+**BE CAREFUL!  `force` AND `query` BOTH USE `eval()`**
 
+### Front end code
 That's all for the backend, now in Angular :
 
 ```javascript
