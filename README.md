@@ -1,5 +1,9 @@
 # Angular Bridge
 
+[![Build Status](https://travis-ci.org/Unitech/angular-bridge.png)](https://travis-ci.org/Unitech/angular-bridge)
+[![Build Status](https://david-dm.org/Unitech/angular-bridge.png)](https://david-dm.org/Unitech/angular-bridge)
+[![NPM version](https://badge.fury.io/js/angular-bridge.png)](http://badge.fury.io/js/angular-bridge)
+
 Create, read, update, delete MongoDB collections via AngularJS.
 
 It uses : 

@@ -1,12 +1,30 @@
 {
   "name": "angular-bridge",
+  "homepage" : "http://unitech.io/",
   "author": {
     "name": "Alexandre Strzelewicz",
     "email" : "strzelewicz.alexandre@gmail.com",
     "url" : "http://unitech.io"
   },
-  "description": "Mongoose Express Angular resources bridge",
-  "version": "0.3.6",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha test"
+  },
+  "contributors" : [
+    {
+      "name" : "kentcdodds"
+    },
+    {
+      "name" : "vegar"
+    },
+    {
+      "name" : "tompi"
+    },
+    {
+      "name" : "winduptoy"
+    }
+  ],
+  "description": "Link models easily via a REST interface between Mongoose/Node-Express/Angular.js",
+  "version": "0.3.7",
   "main": "./index.js",
   "private": false,
   "dependencies": {
@@ -43,6 +61,7 @@
     "name": "tknew",
     "email": "strzelewicz.alexandre@gmail.com"
   },
+  "license": "MIT",
   "engines": {
     "node": "*"
   }
