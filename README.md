@@ -102,6 +102,9 @@ angularBridge.addResource('projects', db.Project, { query: '{_user: String(req.u
 
 // Force a particular value regardless of what the client sends
 angularBridge.addResource('clients', db.Client, { force: {_user: 'req.user._id' }});
+
+// Enable population for the given fields
+angularBridge.addResource('projects', db.Project, { populate: "_ref1" });
 ```
 
 **BE CAREFUL!  `force` AND `query` BOTH USE `eval()`**
