@@ -24,7 +24,7 @@
     }
   ],
   "description": "Link models easily via a REST interface between Mongoose/Node-Express/Angular.js",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "main": "./index.js",
   "private": false,
   "dependencies": {
