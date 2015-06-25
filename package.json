@@ -1,26 +1,26 @@
 {
   "name": "angular-bridge",
-  "homepage" : "http://unitech.io/",
+  "homepage": "https://github.com/Unitech/angular-bridge",
   "author": {
     "name": "Alexandre Strzelewicz",
-    "email" : "strzelewicz.alexandre@gmail.com",
-    "url" : "http://unitech.io"
+    "email": "strzelewicz.alexandre@gmail.com",
+    "url": "http://unitech.io"
   },
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha test"
   },
-  "contributors" : [
+  "contributors": [
     {
-      "name" : "kentcdodds"
+      "name": "kentcdodds"
     },
     {
-      "name" : "vegar"
+      "name": "vegar"
     },
     {
-      "name" : "tompi"
+      "name": "tompi"
     },
     {
-      "name" : "winduptoy"
+      "name": "winduptoy"
     }
   ],
   "description": "Link models easily via a REST interface between Mongoose/Node-Express/Angular.js",
@@ -28,12 +28,10 @@
   "main": "./index.js",
   "private": false,
   "dependencies": {
-    "underscore": "1.x",
-    "mongoose" : "*",
-    "express" : "*"
-  },
-  "scripts" : {
-    "test" : "NODE_ENV=test ./node_modules/mocha/bin/mocha test"
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
+    "mongoose": "*",
+    "underscore": "1.x"
   },
   "keywords": [
     "angular js",
@@ -53,9 +51,8 @@
     "mocha": "*",
     "should": "~1.2.2",
     "supertest": "~0.6.0",
-    "request" : "*"
+    "request": "*"
   },
-  "homepage": "https://github.com/Unitech/angular-bridge",
   "readmeFilename": "README.md",
   "_npmUser": {
     "name": "tknew",
